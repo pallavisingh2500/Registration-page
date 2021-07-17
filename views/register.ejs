@@ -1,0 +1,38 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body" style="box-shadow: 3px 3px 3px 3px gray;">
+      <h1 class="text-center mb-3">
+        <div>
+          <i style="color:#132a13; font-size: 70px;" class="fas fa-users"></i>
+        </div>
+      </h1>
+      <%- include ("./partials/flash"); %>
+        <form action="/users/register" method="POST">
+          <div class="form-group">
+            <label for="name"><b>Name</b></label>
+            <input type="name" id="name" name="name" class="form-control" placeholder="Enter Name"
+              value="<%= typeof name != 'undefined' ? name : '' %>" />
+          </div>
+          <div class="form-group">
+            <label for="email"><b>Email</b></label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email"
+              value="<%= typeof email != 'undefined' ? email : '' %>" />
+          </div>
+          <div class="form-group">
+            <label for="password"><b>Password</b></label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Create Password"
+              value="<%= typeof password != 'undefined' ? password : '' %>" />
+          </div>
+          <div class="form-group">
+            <label for="password2"><b>Confirm Password</b></label>
+            <input type="password" id="password2" name="password2" class="form-control" placeholder="Confirm Password"
+              value="<%= typeof password2 != 'undefined' ? password2 : '' %>" />
+          </div>
+          <button type="submit" class="btn btn-success btn-block">
+            Register
+          </button>
+        </form>
+        <p class="lead mt-4">Have An Account? <a href="/users/login">Login</a></p>
+    </div>
+  </div>
+</div>
